@@ -1171,3 +1171,38 @@ footer {
   display: inline-flex !important;
   align-items: center !important;
 }
+
+/* ═══════════════════════════════════════
+   PILLAR & SPECIAL TAG ICON STYLES
+═══════════════════════════════════════ */
+
+/* Pillar icon box — gold top-bar + green icon */
+.pillar-icon {
+  width: 48px; height: 48px;
+  background: linear-gradient(135deg, rgba(201,162,39,0.12), rgba(13,59,30,0.06));
+  border: 1.5px solid rgba(201,162,39,0.3);
+  border-radius: 10px;
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 14px;
+}
+.pillar-icon svg {
+  stroke: var(--ink);
+}
+.pillar:hover .pillar-icon {
+  background: linear-gradient(135deg, rgba(201,162,39,0.22), rgba(13,59,30,0.1));
+  border-color: var(--gold);
+}
+.pillar:hover .pillar-icon svg {
+  stroke: var(--saffron);
+}
+
+/* Special tag & menu card tag icon */
+.special-tag svg,
+.menu-card-tag svg {
+  stroke: currentColor;
+}
+
+/* Footer social icons — clean SVG display */
+.ft-social a svg {
+  display: block;
+}
