@@ -2,19 +2,24 @@
    TOKENS
 ═══════════════════════════════════════ */
 :root {
-  --saffron:      #D4730A;
-  --saffron-lt:   #F0900D;
-  --gold:         #E8C252;
-  --gold-pale:    #F9ECC4;
-  --cream:        #FBF5E6;
-  --cream-dk:     #F2E8CE;
-  --ink:          #140800;
-  --ink-60:       rgba(20,8,0,.6);
-  --ink-30:       rgba(20,8,0,.3);
-  --brown:        #3A1A05;
-  --brown-lt:     #6B3A1F;
-  --white:        #FFFDF7;
-  --shadow-warm:  0 8px 48px rgba(212,115,10,.15);
+  /* Primary accent — rich gold (from brand logo) */
+  --saffron:      #C9A227;
+  --saffron-lt:   #E2B93B;
+  /* Gold variants */
+  --gold:         #E2B93B;
+  --gold-pale:    #F5E9C0;
+  /* Cream backgrounds */
+  --cream:        #F5F7F2;
+  --cream-dk:     #E8EDE4;
+  /* Dark — deep forest green (from brand logo) */
+  --ink:          #0D3B1E;
+  --ink-60:       rgba(13,59,30,.6);
+  --ink-30:       rgba(13,59,30,.3);
+  /* Mid greens */
+  --brown:        #0A2E17;
+  --brown-lt:     #2E6B42;
+  --white:        #FDFFF9;
+  --shadow-warm:  0 8px 48px rgba(201,162,39,.18);
   --r: 3px;
 }
 
@@ -1114,4 +1119,55 @@ footer {
     opacity: 0.45 !important;
     filter: saturate(1.3) brightness(0.75) !important;
   }
+}
+
+/* ═══════════════════════════════════════
+   SVG ICON BUTTON REFINEMENTS
+═══════════════════════════════════════ */
+
+/* Nav Order Now button — green gold style */
+.nav-order {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 4px !important;
+}
+.nav-order svg { stroke: currentColor; }
+
+/* Hero CTA buttons — inline-flex for icon alignment */
+.btn {
+  display: inline-flex;
+  align-items: center;
+}
+.btn svg { flex-shrink: 0; }
+
+/* CTA banner buttons */
+.btn-white, .btn-woutline {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* Mobile menu phone call link — gold accent */
+.mm-call {
+  color: var(--saffron) !important;
+  font-size: 22px !important;
+  font-weight: 700 !important;
+  margin-top: 24px;
+  padding-top: 28px !important;
+  border-top: 1px solid rgba(255,255,255,0.1) !important;
+}
+.mm-call svg { stroke: var(--saffron); }
+
+/* Info icons — centered in the gold box */
+.info-ico {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+.info-ico svg { display: block; }
+
+/* Hero timing — icon align */
+.hero-timing {
+  display: inline-flex !important;
+  align-items: center !important;
 }
