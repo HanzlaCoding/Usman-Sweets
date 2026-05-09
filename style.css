@@ -1254,3 +1254,66 @@ footer {
   flex-shrink: 0 !important;
   margin: 0 !important;
 }
+
+/* ═══════════════════════════════════════
+   MOBILE HERO — FINAL CLEAN FIX
+   Remove grey strip, bg image behind text
+═══════════════════════════════════════ */
+
+/* Remove the cream/grey background from hero-images (it leaks on mobile) */
+.hero-images {
+  background: transparent !important;
+}
+
+@media (max-width: 768px) {
+  /* Hero = full screen, relative container */
+  .hero {
+    display: block !important;
+    position: relative !important;
+    overflow: hidden !important;
+    min-height: 100svh !important;
+    padding-top: 0 !important;
+  }
+
+  /* Image fills the FULL hero behind text */
+  .hero-images {
+    position: absolute !important;
+    inset: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    z-index: 0 !important;
+    background: transparent !important;
+  }
+
+  .hero-img-main {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    opacity: 0.35 !important;
+    filter: saturate(1.3) brightness(0.7) !important;
+  }
+
+  /* Dark gradient overlay for text legibility */
+  .hero-img-overlay {
+    background: linear-gradient(to bottom, rgba(13,59,30,0.55) 0%, rgba(13,59,30,0.80) 100%) !important;
+  }
+
+  /* Text on top */
+  .hero-text {
+    position: relative !important;
+    z-index: 1 !important;
+    padding: 120px 28px 60px !important;
+    min-height: 100svh !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+  }
+
+  /* Hide pill on mobile */
+  .hero-pill { display: none !important; }
+
+  /* Text color overrides for readability on green bg */
+  .hero-text .hero-badge { color: var(--gold) !important; border-color: rgba(201,162,39,0.4) !important; }
+  .hero-text .stat-l { color: rgba(255,255,255,0.5) !important; }
+  .hero-text .hero-sub { color: rgba(255,255,255,0.7) !important; }
+}
