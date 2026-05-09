@@ -20,17 +20,31 @@ srEls.forEach(el => obs.observe(el));
 const ham = document.getElementById('ham');
 const mobileMenu = document.getElementById('mobileMenu');
 const mobileClose = document.getElementById('mobileClose');
-ham.addEventListener('click', () => mobileMenu.classList.add('open'));
-mobileClose.addEventListener('click', () => mobileMenu.classList.remove('open'));
+
+ham.addEventListener('click', () => {
+  mobileMenu.classList.add('open');
+  ham.classList.add('open');
+});
+
+mobileClose.addEventListener('click', () => {
+  mobileMenu.classList.remove('open');
+  ham.classList.remove('open');
+});
+
 document.querySelectorAll('.mm-link').forEach(l => {
-  l.addEventListener('click', () => mobileMenu.classList.remove('open'));
+  l.addEventListener('click', () => {
+    mobileMenu.classList.remove('open');
+    ham.classList.remove('open');
+  });
 });
 
-// Smooth close mobile menu on outside click
+// Close on outside click
 mobileMenu.addEventListener('click', e => {
-  if (e.target === mobileMenu) mobileMenu.classList.remove('open');
+  if (e.target === mobileMenu) {
+    mobileMenu.classList.remove('open');
+    ham.classList.remove('open');
+  }
 });
-
 
 // Preloader
 window.addEventListener('load', () => {
